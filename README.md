@@ -1,1 +1,1 @@
-web development firts project start up repo to advanced repo and projets
+web development first project start up repo to advanced repo and projets

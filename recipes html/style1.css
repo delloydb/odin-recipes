@@ -1,0 +1,21 @@
+.img-banana{
+    height: 200px;
+    width: 200px;
+}
+/* rule 1 */
+* {
+    color: black;
+  }
+  
+  /* rule 2 */
+  h1 {
+    color: brown;
+  }
+.sublist{
+  background-color: yellowgreen;
+  color: #000;
+}
+.ingredients{
+  display: inline-block;
+  margin-right: 500px;
+}

@@ -1,0 +1,21 @@
+.img-cilantro{
+    height: 200px;
+    width: 200px;
+}
+/* rule 1 */
+* {
+    color: black;
+  }
+  
+  /* rule 2 */
+  h1 {
+    color: orange;
+  }
+  .sublist{
+    background-color: green;
+    color: #000;
+  }
+  .ingredients{
+    display: inline-block;
+    margin-right: 500px;
+  }

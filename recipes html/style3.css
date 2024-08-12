@@ -1,0 +1,21 @@
+.img-fruit{
+    height: 200px;
+    width: 200px;
+}
+/* rule 1 */
+* {
+    color: black;
+  }
+  
+  /* rule 2 */
+  h1 {
+    color: rgb(255, 0, 0);
+  }
+  .sublist{
+    background-color: rgb(75, 112, 1);
+    color: #000;
+  }  
+  .ingredients{
+    display: inline-block;
+    margin-right: 500px;
+  }

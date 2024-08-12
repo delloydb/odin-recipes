@@ -1,0 +1,145 @@
+/*initial start up flex div*/
+.navigation{
+  background-color: antiquewhite;
+  display: flex;
+  justify-content: end;
+  gap: 100px;
+}
+.recipebanana{
+ border: 4px rgb(6, 82, 56);
+ 
+}
+.recipefruit{
+  border: 4px rgb(26, 83, 64);
+
+}
+.recipechicken{
+  border: 4px rgb(10, 80, 57);
+
+}
+/* images style*/
+*{
+    color: #000;
+}
+.banana-bread{
+    color: rgb(3, 65, 65);
+}
+.cilantro-chicken{
+    color: rgb(0, 0, 88);
+}
+.fruit-salad{
+    color: rgb(50, 2, 95);
+}
+.caution{
+    background-color: rgb(228, 228, 228);
+    color: #293a00;
+  }
+  
+
+
+
+
+
+  /*first flex */
+  .display{
+    
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+  }
+  .display1{
+    border: 4px solid rgb(224, 212, 211);
+
+  }
+  .display2{
+    border: 4px solid rgb(224, 212, 211);
+  }
+  .display3{
+    border: 4px solid rgb(224, 212, 211);
+
+
+
+
+  }
+  .cautious{
+    display: flex-block;
+}
+  .img-banana{
+    height: 200px;
+    width: 200px;
+  }
+  .img-cilantro{
+    height: 200px;
+    width: 200px;
+  }
+  .img-fruit{
+    height: 200px;
+    width: 200px;
+  }
+
+
+
+
+/*second flex */
+  .master-menu{
+    display: flex;
+    background-color: peachpuff;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  .honey{
+    flex: 1;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  .cassarole{
+    flex: 1;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  .coleslaw{
+    flex: 1;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  .salad{
+    flex: 1;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  .Fondant{
+    flex: 1;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  .fried{
+    flex: 1;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  /*images in second flex*/
+  .beets{
+    height: 200px;
+    width: 200px;
+  }
+  .spinach{
+    height: 200px;
+    width: 200px;
+  }
+  .cowboy{
+    height: 200px;
+    width: 200px;
+  }
+  .shirazi{
+    height: 200px;
+    width: 200px;
+  }
+  .potatoes{
+    height: 200px;
+    width: 200px;
+  }
+  .rice{
+    height: 200px;
+    width: 200px;
+  }

@@ -2,7 +2,6 @@
 
 A collection of delicious recipes built with pure HTML & CSS.
 
-![Recipe Website Preview](preview.jpg)
 
 ## 📋 Table of Contents
 - [Features](#-features)

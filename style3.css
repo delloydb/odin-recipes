@@ -39,7 +39,7 @@ h2 {
 
 .recipe-img {
   max-width: 100%;
-  height: auto;
+  height: 300px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(199, 56, 102, 0.2);
 }

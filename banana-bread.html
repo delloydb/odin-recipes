@@ -1,57 +1,105 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Classic Banana Bread Recipe</title>
-  <link rel="stylesheet" href="style1.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Lora:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Classic Banana Bread</h1>
-  
-  <div class="img-container">
-    <img src="https://www.allrecipes.com/thmb/zksmXHLzXQ46d7CFgiDOMoHZ1ow=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/20144-banana-banana-bread-mfs-60-bddcb8e0caac452386de52f6fecf33db.jpg" alt="Banana Bread" class="img-banana">
-  </div>
-
-  <div class="time-info">
-    <div class="time-item">
-      <span>Prep Time</span>
-      15 minutes
+  <header class="hero">
+    <div class="container">
+      <h1 class="hero-title">Classic Banana Bread</h1>
+      <div class="hero-image">
+        <img src="https://www.allrecipes.com/thmb/zksmXHLzXQ46d7CFgiDOMoHZ1ow=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/20144-banana-banana-bread-mfs-60-bddcb8e0caac452386de52f6fecf33db.jpg" 
+             alt="Freshly baked banana bread on a wooden cutting board" 
+             class="recipe-image">
+      </div>
     </div>
-    <div class="time-item">
-      <span>Cook Time</span>
-      1 hour
+  </header>
+
+  <main class="container">
+    <section class="time-cards">
+      <div class="time-card">
+        <h3 class="time-label">Prep Time</h3>
+        <p class="time-value">15 minutes</p>
+      </div>
+      <div class="time-card">
+        <h3 class="time-label">Cook Time</h3>
+        <p class="time-value">1 hour</p>
+      </div>
+      <div class="time-card">
+        <h3 class="time-label">Total Time</h3>
+        <p class="time-value">1 hour 15 minutes</p>
+      </div>
+    </section>
+
+    <article class="recipe-content">
+      <section class="ingredients-section">
+        <h2 class="section-title">Ingredients</h2>
+        <ul class="ingredients-list">
+          <li class="ingredient-item">
+            <span class="ingredient-amount">2 cups</span> all-purpose flour
+          </li>
+          <li class="ingredient-item">
+            <span class="ingredient-amount">1 teaspoon</span> baking soda
+          </li>
+          <li class="ingredient-item">
+            <span class="ingredient-amount">¼ teaspoon</span> salt
+          </li>
+          <li class="ingredient-item">
+            <span class="ingredient-amount">¾ cup</span> brown sugar
+          </li>
+          <li class="ingredient-item">
+            <span class="ingredient-amount">½ cup</span> butter, softened
+          </li>
+          <li class="ingredient-item">
+            <span class="ingredient-amount">2 large</span> eggs, beaten
+          </li>
+          <li class="ingredient-item">
+            <span class="ingredient-amount">2 ⅓ cups</span> mashed overripe bananas (about 4-5 bananas)
+          </li>
+        </ul>
+      </section>
+
+      <section class="instructions-section">
+        <h2 class="section-title">Instructions</h2>
+        <ol class="instructions-list">
+          <li class="instruction-step">
+            Preheat the oven to 350°F (175°C). Lightly grease a 9x5-inch loaf pan.
+          </li>
+          <li class="instruction-step">
+            Combine flour, baking soda, and salt in a large bowl.
+          </li>
+          <li class="instruction-step">
+            In a separate bowl, beat brown sugar and butter until smooth. Stir in eggs and mashed bananas until well blended.
+          </li>
+          <li class="instruction-step">
+            Gradually stir banana mixture into flour mixture until just combined. Pour batter into the prepared loaf pan.
+          </li>
+          <li class="instruction-step">
+            Bake for about 60 minutes, or until a toothpick inserted into the center comes out clean.
+          </li>
+          <li class="instruction-step">
+            Let bread cool in pan for 10 minutes, then transfer to a wire rack to cool completely.
+          </li>
+        </ol>
+      </section>
+    </article>
+
+    <aside class="recipe-tip">
+      <h3 class="tip-title">Baker's Tip</h3>
+      <p class="tip-content">For extra flavor, you can add ½ cup of chopped walnuts or chocolate chips to the batter!</p>
+    </aside>
+  </main>
+
+  <footer class="page-footer">
+    <div class="container">
+      <p class="footer-text">© 2023 Classic Banana Bread Recipe. All rights reserved.</p>
     </div>
-    <div class="time-item">
-      <span>Total Time</span>
-      1 hour 15 minutes
-    </div>
-  </div>
-
-  <h2>Ingredients</h2>
-  <div class="ingredients">
-    <ul class="sublist">
-      <li>2 cups all-purpose flour</li>
-      <li>1 teaspoon baking soda</li>
-      <li>¼ teaspoon salt</li>
-      <li>¾ cup brown sugar</li>
-      <li>½ cup butter, softened</li>
-      <li>2 large eggs, beaten</li>
-      <li>2 ⅓ cups mashed overripe bananas (about 4-5 bananas)</li>
-    </ul>
-  </div>
-
-  <h3>Instructions</h3>
-  <ol>
-    <li>Preheat the oven to 350°F (175°C). Lightly grease a 9x5-inch loaf pan.</li>
-    <li>Combine flour, baking soda, and salt in a large bowl.</li>
-    <li>In a separate bowl, beat brown sugar and butter until smooth. Stir in eggs and mashed bananas until well blended.</li>
-    <li>Gradually stir banana mixture into flour mixture until just combined. Pour batter into the prepared loaf pan.</li>
-    <li>Bake for about 60 minutes, or until a toothpick inserted into the center comes out clean.</li>
-    <li>Let bread cool in pan for 10 minutes, then transfer to a wire rack to cool completely.</li>
-  </ol>
-
-  <div class="note">
-    <strong>Tip:</strong> For extra flavor, you can add ½ cup of chopped walnuts or chocolate chips to the batter!
-  </div>
+  </footer>
 </body>
 </html>

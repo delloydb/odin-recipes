@@ -5,66 +5,137 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cilantro Lime Chicken Recipe</title>
   <link rel="stylesheet" href="style2.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-
 <body>
-  <header>
-    <h1>Cilantro Lime Chicken</h1>
-    <div class="img-container">
-      <img src="https://www.allrecipes.com/thmb/lfCU1G99gjjo5lR96qOHXnj7Vc4=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/RM-218863-SlowCookerCilantroLimeChicken-ddmfs-3x4-7030-f166f0f726d24ee3b1d12856f5244b08.jpg" alt="Cilantro Lime Chicken in slow cooker" class="recipe-img">
+  <header class="recipe-header">
+    <div class="header-content">
+      <h1 class="recipe-title">Cilantro Lime Chicken</h1>
+      <p class="recipe-description">A zesty slow-cooker dish bursting with fresh Mexican flavors</p>
+    </div>
+    <div class="recipe-hero">
+      <img src="https://www.allrecipes.com/thmb/lfCU1G99gjjo5lR96qOHXnj7Vc4=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/RM-218863-SlowCookerCilantroLimeChicken-ddmfs-3x4-7030-f166f0f726d24ee3b1d12856f5244b08.jpg" 
+           alt="Cilantro Lime Chicken in slow cooker with fresh lime and cilantro garnish" 
+           class="hero-image">
     </div>
   </header>
 
-  <main>
+  <main class="recipe-container">
     <section class="recipe-meta">
-      <div class="time-info">
-        <div class="time-item">
-          <span>Prep Time</span>
-          10 minutes
+      <div class="meta-cards">
+        <div class="meta-card">
+          <i class="fas fa-clock"></i>
+          <div>
+            <h3>Prep Time</h3>
+            <p>10 minutes</p>
+          </div>
         </div>
-        <div class="time-item">
-          <span>Cook Time</span>
-          4-8 hours
+        <div class="meta-card">
+          <i class="fas fa-fire"></i>
+          <div>
+            <h3>Cook Time</h3>
+            <p>4-8 hours</p>
+          </div>
         </div>
-        <div class="time-item">
-          <span>Servings</span>
-          6-8
+        <div class="meta-card">
+          <i class="fas fa-utensils"></i>
+          <div>
+            <h3>Servings</h3>
+            <p>6-8</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="ingredients-section">
-      <h2>Ingredients</h2>
-      <div class="ingredients">
+    <div class="recipe-columns">
+      <section class="ingredients-section">
+        <h2 class="section-title">
+          <i class="fas fa-shopping-basket"></i>
+          Ingredients
+        </h2>
         <ul class="ingredient-list">
-          <li>1 (16 ounce) jar salsa</li>
-          <li>1 (1.25 ounce) package dry taco seasoning mix</li>
-          <li>1 medium lime, juiced</li>
-          <li>3 tablespoons chopped fresh cilantro</li>
-          <li>3 pounds skinless, boneless chicken thighs</li>
+          <li class="ingredient-item">
+            <span class="ingredient-quantity">1 (16 ounce) jar</span>
+            <span class="ingredient-name">salsa</span>
+          </li>
+          <li class="ingredient-item">
+            <span class="ingredient-quantity">1 (1.25 ounce) package</span>
+            <span class="ingredient-name">dry taco seasoning mix</span>
+          </li>
+          <li class="ingredient-item">
+            <span class="ingredient-quantity">1 medium</span>
+            <span class="ingredient-name">lime, juiced</span>
+          </li>
+          <li class="ingredient-item">
+            <span class="ingredient-quantity">3 tablespoons</span>
+            <span class="ingredient-name">chopped fresh cilantro</span>
+          </li>
+          <li class="ingredient-item">
+            <span class="ingredient-quantity">3 pounds</span>
+            <span class="ingredient-name">skinless, boneless chicken thighs</span>
+          </li>
         </ul>
-      </div>
-    </section>
+      </section>
 
-    <section class="instructions-section">
-      <h2>Instructions</h2>
-      <ol class="instructions">
-        <li><span class="step-number">1</span> Gather all ingredients.</li>
-        <li><span class="step-number">2</span> Stir salsa, taco seasoning, lime juice, and cilantro together in a slow cooker until well combined.</li>
-        <li><span class="step-number">3</span> Add chicken and spoon salsa mixture over top to coat.</li>
-        <li><span class="step-number">4</span> Cover and cook until chicken is no longer pink in the center and the juices run clear, on Low for 6 to 8 hours or High for 4 hours.</li>
-        <li><span class="step-number">5</span> Shred chicken in the crock with two forks, then mix with the sauce.</li>
-        <li><span class="step-number">6</span> Serve and enjoy!</li>
-      </ol>
-    </section>
+      <section class="instructions-section">
+        <h2 class="section-title">
+          <i class="fas fa-list-ol"></i>
+          Instructions
+        </h2>
+        <ol class="instruction-steps">
+          <li class="instruction-step">
+            <div class="step-number">1</div>
+            <div class="step-content">Gather all ingredients.</div>
+          </li>
+          <li class="instruction-step">
+            <div class="step-number">2</div>
+            <div class="step-content">Stir salsa, taco seasoning, lime juice, and cilantro together in a slow cooker until well combined.</div>
+          </li>
+          <li class="instruction-step">
+            <div class="step-number">3</div>
+            <div class="step-content">Add chicken and spoon salsa mixture over top to coat.</div>
+          </li>
+          <li class="instruction-step">
+            <div class="step-number">4</div>
+            <div class="step-content">Cover and cook until chicken is no longer pink in the center and the juices run clear, on Low for 6 to 8 hours or High for 4 hours.</div>
+          </li>
+          <li class="instruction-step">
+            <div class="step-number">5</div>
+            <div class="step-content">Shred chicken in the crock with two forks, then mix with the sauce.</div>
+          </li>
+          <li class="instruction-step">
+            <div class="step-number">6</div>
+            <div class="step-content">Serve and enjoy!</div>
+          </li>
+        </ol>
+      </section>
+    </div>
 
     <section class="notes-section">
-      <h3>Recipe Notes</h3>
-      <div class="note">
-        <p><strong>Tip:</strong> For extra flavor, add a teaspoon of ground cumin or smoked paprika to the seasoning mix.</p>
-        <p><strong>Serving suggestion:</strong> Serve in tortillas with avocado, sour cream, and shredded cheese for delicious tacos.</p>
+      <div class="notes-container">
+        <h2 class="section-title">
+          <i class="fas fa-lightbulb"></i>
+          Chef's Notes
+        </h2>
+        <div class="recipe-tips">
+          <div class="tip-card">
+            <h3 class="tip-title">Flavor Boost</h3>
+            <p class="tip-content">For extra flavor, add a teaspoon of ground cumin or smoked paprika to the seasoning mix.</p>
+          </div>
+          <div class="tip-card">
+            <h3 class="tip-title">Serving Suggestion</h3>
+            <p class="tip-content">Serve in tortillas with avocado, sour cream, and shredded cheese for delicious tacos.</p>
+          </div>
+        </div>
       </div>
     </section>
   </main>
+
+  <footer class="recipe-footer">
+    <p>© 2023 Cilantro Lime Chicken Recipe | Designed with <i class="fas fa-heart"></i> for food lovers</p>
+  </footer>
 </body>
 </html>

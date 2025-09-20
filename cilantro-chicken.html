@@ -4,22 +4,463 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cilantro Lime Chicken Recipe</title>
-  <link rel="stylesheet" href="style2.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* Base Styles */
+    :root {
+      --primary-color: #4A8B2C;
+      --primary-light: #6aaf4a;
+      --secondary-color: #F4D35E;
+      --accent-color: #EE964B;
+      --dark-color: #2D2D2A;
+      --light-color: #F8F8F8;
+      --white: #FFFFFF;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      --shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.12);
+      --border-radius: 12px;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--dark-color);
+      line-height: 1.6;
+      background-color: var(--light-color);
+      padding-bottom: 20px;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+
+    /* Header Styles */
+    .recipe-header {
+      position: relative;
+      margin-bottom: 40px;
+      border-radius: 0 0 var(--border-radius) var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .header-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 30px 20px;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+      color: var(--white);
+      z-index: 2;
+    }
+
+    .recipe-title {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: var(--white);
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    .recipe-description {
+      font-size: 1.1rem;
+      color: var(--white);
+      max-width: 600px;
+      opacity: 0.9;
+    }
+
+    .recipe-hero {
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .recipe-hero:hover .hero-image {
+      transform: scale(1.03);
+    }
+
+    /* Recipe Container */
+    .recipe-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Meta Cards */
+    .meta-cards {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .meta-card {
+      background: var(--white);
+      padding: 25px 20px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      flex: 1;
+      min-width: 180px;
+      max-width: 220px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      transition: var(--transition);
+      border-top: 4px solid var(--accent-color);
+    }
+
+    .meta-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .meta-card i {
+      font-size: 1.8rem;
+      color: var(--accent-color);
+      background: rgba(238, 150, 75, 0.1);
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+
+    .meta-card h3 {
+      font-size: 0.95rem;
+      margin-bottom: 5px;
+      color: var(--dark-color);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+    }
+
+    .meta-card p {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+
+    /* Recipe Columns */
+    .recipe-columns {
+      display: grid;
+      grid-template-columns: 1fr 1.8fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .section-title {
+      font-size: 1.7rem;
+      margin-bottom: 25px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--secondary-color);
+    }
+
+    .section-title i {
+      color: var(--accent-color);
+      background: rgba(238, 150, 75, 0.1);
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+
+    /* Ingredients Section */
+    .ingredients-section {
+      background: var(--white);
+      padding: 30px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      align-self: start;
+    }
+
+    .ingredient-list {
+      list-style: none;
+    }
+
+    .ingredient-item {
+      padding: 14px 0;
+      border-bottom: 1px dashed #eaeaea;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 15px;
+      transition: var(--transition);
+    }
+
+    .ingredient-item:hover {
+      background-color: rgba(74, 139, 44, 0.05);
+      padding-left: 10px;
+      border-radius: 6px;
+    }
+
+    .ingredient-item:last-child {
+      border-bottom: none;
+    }
+
+    .ingredient-quantity {
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+
+    /* Instructions Section */
+    .instructions-section {
+      background: var(--white);
+      padding: 30px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+    }
+
+    .instruction-steps {
+      list-style: none;
+      counter-reset: step-counter;
+    }
+
+    .instruction-step {
+      counter-increment: step-counter;
+      padding: 22px 0 22px 75px;
+      position: relative;
+      border-bottom: 1px solid #f0f0f0;
+      transition: var(--transition);
+    }
+
+    .instruction-step:hover {
+      background-color: rgba(244, 211, 94, 0.08);
+      border-radius: 6px;
+    }
+
+    .instruction-step:last-child {
+      border-bottom: none;
+    }
+
+    .step-number {
+      position: absolute;
+      left: 0;
+      top: 22px;
+      width: 45px;
+      height: 45px;
+      background-color: var(--primary-color);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 1.2rem;
+      transition: var(--transition);
+    }
+
+    .instruction-step:hover .step-number {
+      background-color: var(--primary-light);
+      transform: scale(1.05);
+    }
+
+    .step-content {
+      padding-right: 15px;
+    }
+
+    /* Notes Section */
+    .notes-section {
+      margin-bottom: 50px;
+    }
+
+    .notes-container {
+      background-color: rgba(244, 211, 94, 0.15);
+      padding: 35px 30px;
+      border-radius: var(--border-radius);
+      border-left: 4px solid var(--secondary-color);
+    }
+
+    .recipe-tips {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .tip-card {
+      background: var(--white);
+      padding: 25px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      border-top: 3px solid var(--accent-color);
+    }
+
+    .tip-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .tip-title {
+      color: var(--accent-color);
+      margin-bottom: 12px;
+      font-size: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tip-title:before {
+      content: "•";
+      color: var(--accent-color);
+      font-size: 1.5rem;
+    }
+
+    .tip-content {
+      color: var(--dark-color);
+      line-height: 1.7;
+    }
+
+    /* Footer */
+    .recipe-footer {
+      background-color: var(--primary-color);
+      color: var(--white);
+      text-align: center;
+      padding: 25px;
+      font-size: 0.95rem;
+      border-radius: var(--border-radius);
+      margin: 0 20px;
+    }
+
+    .recipe-footer i {
+      color: #ff6b6b;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 900px) {
+      .recipe-columns {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      
+      .ingredients-section {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      
+      .recipe-hero {
+        height: 350px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .recipe-title {
+        font-size: 2.2rem;
+      }
+      
+      .meta-cards {
+        gap: 15px;
+      }
+      
+      .meta-card {
+        min-width: 160px;
+        padding: 20px 15px;
+      }
+      
+      .recipe-hero {
+        height: 300px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .meta-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .meta-card {
+        width: 100%;
+        max-width: 100%;
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+      }
+      
+      .instruction-step {
+        padding-left: 60px;
+      }
+      
+      .step-number {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+      }
+      
+      .recipe-hero {
+        height: 250px;
+      }
+      
+      .header-content {
+        padding: 20px 15px;
+      }
+      
+      .recipe-title {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .recipe-title {
+        font-size: 1.8rem;
+      }
+      
+      .section-title {
+        font-size: 1.5rem;
+      }
+      
+      .ingredient-item {
+        grid-template-columns: 1fr;
+        gap: 5px;
+      }
+      
+      .instruction-step {
+        padding-left: 50px;
+      }
+      
+      .step-number {
+        width: 35px;
+        height: 35px;
+      }
+      
+      .recipe-hero {
+        height: 200px;
+      }
+      
+      .recipe-tips {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
   <header class="recipe-header">
-    <div class="header-content">
-      <h1 class="recipe-title">Cilantro Lime Chicken</h1>
-      <p class="recipe-description">A zesty slow-cooker dish bursting with fresh Mexican flavors</p>
-    </div>
     <div class="recipe-hero">
       <img src="https://www.allrecipes.com/thmb/lfCU1G99gjjo5lR96qOHXnj7Vc4=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/RM-218863-SlowCookerCilantroLimeChicken-ddmfs-3x4-7030-f166f0f726d24ee3b1d12856f5244b08.jpg" 
            alt="Cilantro Lime Chicken in slow cooker with fresh lime and cilantro garnish" 
            class="hero-image">
+    </div>
+    <div class="header-content">
+      <h1 class="recipe-title">Cilantro Lime Chicken</h1>
+      <p class="recipe-description">A zesty slow-cooker dish bursting with fresh Mexican flavors</p>
     </div>
   </header>
 

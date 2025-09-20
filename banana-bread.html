@@ -4,16 +4,394 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Classic Banana Bread Recipe</title>
-  <link rel="stylesheet" href="style1.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Lora:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* Base Styles */
+    :root {
+      --primary-color: #8B4513;
+      --primary-light: #A0522D;
+      --secondary-color: #D2691E;
+      --accent-color: #F4A460;
+      --dark-color: #5C4033;
+      --light-color: #FFF8DC;
+      --white: #FFFFFF;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      --shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.12);
+      --border-radius: 12px;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--dark-color);
+      line-height: 1.6;
+      background-color: var(--light-color);
+      padding-bottom: 20px;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Lora', serif;
+      font-weight: 600;
+      color: var(--dark-color);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header Styles */
+    .hero {
+      position: relative;
+      margin-bottom: 40px;
+      border-radius: 0 0 var(--border-radius) var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: var(--primary-color);
+      text-align: center;
+      padding: 25px 20px 15px;
+    }
+
+    .hero-title a {
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .hero-title a:hover {
+      color: var(--secondary-color);
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .recipe-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .hero-image:hover .recipe-image {
+      transform: scale(1.03);
+    }
+
+    /* Time Cards */
+    .time-cards {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .time-card {
+      background: var(--white);
+      padding: 25px 20px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      flex: 1;
+      min-width: 180px;
+      max-width: 220px;
+      text-align: center;
+      transition: var(--transition);
+      border-top: 4px solid var(--accent-color);
+    }
+
+    .time-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .time-label {
+      font-size: 0.95rem;
+      margin-bottom: 5px;
+      color: var(--dark-color);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+    }
+
+    .time-value {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+
+    /* Recipe Content */
+    .recipe-content {
+      display: grid;
+      grid-template-columns: 1fr 1.8fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .section-title {
+      font-size: 1.7rem;
+      margin-bottom: 25px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--accent-color);
+    }
+
+    .section-title i {
+      color: var(--primary-color);
+      background: rgba(139, 69, 19, 0.1);
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+
+    /* Ingredients Section */
+    .ingredients-section {
+      background: var(--white);
+      padding: 30px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      align-self: start;
+    }
+
+    .ingredients-list {
+      list-style: none;
+    }
+
+    .ingredient-item {
+      padding: 14px 0;
+      border-bottom: 1px dashed #eaeaea;
+      transition: var(--transition);
+      display: flex;
+      gap: 10px;
+    }
+
+    .ingredient-item:hover {
+      background-color: rgba(244, 164, 96, 0.1);
+      padding-left: 10px;
+      border-radius: 6px;
+    }
+
+    .ingredient-item:last-child {
+      border-bottom: none;
+    }
+
+    .ingredient-amount {
+      font-weight: 600;
+      color: var(--primary-color);
+      min-width: 80px;
+    }
+
+    /* Instructions Section */
+    .instructions-section {
+      background: var(--white);
+      padding: 30px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+    }
+
+    .instructions-list {
+      list-style: none;
+      counter-reset: step-counter;
+    }
+
+    .instruction-step {
+      counter-increment: step-counter;
+      padding: 22px 0 22px 75px;
+      position: relative;
+      border-bottom: 1px solid #f0f0f0;
+      transition: var(--transition);
+    }
+
+    .instruction-step:hover {
+      background-color: rgba(244, 164, 96, 0.08);
+      border-radius: 6px;
+    }
+
+    .instruction-step:last-child {
+      border-bottom: none;
+    }
+
+    .instruction-step::before {
+      content: counter(step-counter);
+      position: absolute;
+      left: 0;
+      top: 22px;
+      width: 45px;
+      height: 45px;
+      background-color: var(--primary-color);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 1.2rem;
+      transition: var(--transition);
+    }
+
+    .instruction-step:hover::before {
+      background-color: var(--primary-light);
+      transform: scale(1.05);
+    }
+
+    /* Recipe Tip */
+    .recipe-tip {
+      background-color: rgba(244, 164, 96, 0.15);
+      padding: 35px 30px;
+      border-radius: var(--border-radius);
+      border-left: 4px solid var(--accent-color);
+      margin-bottom: 50px;
+    }
+
+    .tip-title {
+      color: var(--primary-color);
+      margin-bottom: 12px;
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tip-title:before {
+      content: "💡";
+      font-size: 1.5rem;
+    }
+
+    .tip-content {
+      color: var(--dark-color);
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+
+    /* Footer */
+    .page-footer {
+      background-color: var(--primary-color);
+      color: var(--white);
+      text-align: center;
+      padding: 25px;
+      font-size: 0.95rem;
+      border-radius: var(--border-radius);
+      margin: 0 20px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 900px) {
+      .recipe-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      
+      .ingredients-section {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      
+      .hero-image {
+        height: 350px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.2rem;
+      }
+      
+      .time-cards {
+        gap: 15px;
+      }
+      
+      .time-card {
+        min-width: 160px;
+        padding: 20px 15px;
+      }
+      
+      .hero-image {
+        height: 300px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .time-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .time-card {
+        width: 100%;
+        max-width: 100%;
+      }
+      
+      .instruction-step {
+        padding-left: 60px;
+      }
+      
+      .instruction-step::before {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+      }
+      
+      .hero-image {
+        height: 250px;
+      }
+      
+      .hero-title {
+        font-size: 2rem;
+        padding: 20px 15px 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-title {
+        font-size: 1.8rem;
+      }
+      
+      .section-title {
+        font-size: 1.5rem;
+      }
+      
+      .instruction-step {
+        padding-left: 50px;
+      }
+      
+      .instruction-step::before {
+        width: 35px;
+        height: 35px;
+      }
+      
+      .hero-image {
+        height: 200px;
+      }
+    }
+  </style>
 </head>
 <body>
   <header class="hero">
     <div class="container">
       <h1 class="hero-title">Classic Banana Bread</h1>
-             <a href="index.html" class="hero-title"><h1>Odin Recipes</h1></a>
+      <a href="index.html" class="hero-title"><h1>Odin Recipes</h1></a>
       <div class="hero-image">
         <img src="https://www.allrecipes.com/thmb/zksmXHLzXQ46d7CFgiDOMoHZ1ow=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/20144-banana-banana-bread-mfs-60-bddcb8e0caac452386de52f6fecf33db.jpg" 
              alt="Freshly baked banana bread on a wooden cutting board" 
@@ -40,7 +418,10 @@
 
     <article class="recipe-content">
       <section class="ingredients-section">
-        <h2 class="section-title">Ingredients</h2>
+        <h2 class="section-title">
+          <i class="fas fa-shopping-basket"></i>
+          Ingredients
+        </h2>
         <ul class="ingredients-list">
           <li class="ingredient-item">
             <span class="ingredient-amount">2 cups</span> all-purpose flour
@@ -67,7 +448,10 @@
       </section>
 
       <section class="instructions-section">
-        <h2 class="section-title">Instructions</h2>
+        <h2 class="section-title">
+          <i class="fas fa-list-ol"></i>
+          Instructions
+        </h2>
         <ol class="instructions-list">
           <li class="instruction-step">
             Preheat the oven to 350°F (175°C). Lightly grease a 9x5-inch loaf pan.
